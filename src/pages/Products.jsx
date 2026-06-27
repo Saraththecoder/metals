@@ -64,6 +64,7 @@ export default function Products() {
             animate={{ opacity: 1 }}
             exit={pref ? {} : { opacity: 0 }}
             transition={{ duration: 0.2 }}
+            className="product-grid"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.25rem' }}
           >
             {filtered.map((product, i) => (

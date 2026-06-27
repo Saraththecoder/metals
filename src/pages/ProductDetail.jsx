@@ -187,7 +187,7 @@ export default function ProductDetail() {
                 <FiGrid size={14} /> All Products
               </Link>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
+            <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
               {related.map(p => <ProductCard key={p.slug} product={p} />)}
             </div>
           </>

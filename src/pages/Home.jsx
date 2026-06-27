@@ -276,7 +276,7 @@ export default function Home() {
       <section style={{ padding: '6rem 1.5rem', background: 'var(--c-bg-subtle)' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <SectionHeading label="Product Catalogue" title="What We Supply" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
+          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
             {products.slice(0, 6).map((p, i) => (
               <motion.div key={p.slug} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.55, delay: i * 0.07 }} style={{ height: '100%' }}>
                 <ProductCard product={p} />
@@ -297,7 +297,7 @@ export default function Home() {
       <section style={{ padding: '6rem 1.5rem', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <SectionHeading label="Why Partner With Us" title="The GK'S Advantage" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: '1.25rem' }}>
+          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: '1.25rem' }}>
             {features.map((f, i) => {
               const Icon = f.icon;
               return (
@@ -377,7 +377,7 @@ export default function Home() {
       <section style={{ padding: '6rem 1.5rem', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <SectionHeading label="Client Feedback" title="Trusted by Manufacturers" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
+          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
             {[
               { quote: "Sourcing graphite powder with consistent mesh size is always challenging. GK'S Metals solved this completely — their batch-to-batch consistency is impeccable.", author: 'V.K. Murthy',  role: 'Head of Procurement', company: 'Southern Foundry Linings', color: '#3BB54A' },
               { quote: "We needed 500 MT of high-purity Silica Sand delivered to Gujarat on a tight timeline. GK'S Metals coordinated everything flawlessly — on spec, on time.",   author: 'Ananya Sen',   role: 'Operations Director',  company: 'Gujarat Glass Industries',   color: '#1B3FD8' },

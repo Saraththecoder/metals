@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="lotus-gradient" style={{ height: '3px', position: 'absolute', top: 0, left: 0, right: 0 }} />
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '4.5rem 1.5rem 2rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
 
           {/* Brand */}
           <div>
