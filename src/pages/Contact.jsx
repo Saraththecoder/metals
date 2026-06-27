@@ -26,7 +26,7 @@ export default function Contact() {
 
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         <SectionHeading label="Get In Touch" title="Let's Talk Business" />
-        <p style={{ fontFamily: "'DM Sans'", fontSize: '0.9375rem', color: 'var(--c-text-muted)', lineHeight: 1.75, textAlign: 'center', maxWidth: '520px', margin: '-2rem auto 4rem' }}>
+        <p style={{ fontFamily: "'Inter'", fontSize: '0.9375rem', color: 'var(--c-text-muted)', lineHeight: 1.75, textAlign: 'center', maxWidth: '520px', margin: '-2rem auto 4rem' }}>
           Send us your material specs, purity requirements, and quantities. We respond with availability and pricing within 24 hours.
         </p>
 
@@ -38,7 +38,7 @@ export default function Contact() {
             <div style={{ background: '#fff', borderRadius: '14px', border: '1px solid var(--c-border-lt)', boxShadow: 'var(--shadow-card)', overflow: 'hidden' }}>
               <div className="lotus-gradient" style={{ height: '3px' }} />
               <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.9rem', color: '#0F1A3D', letterSpacing: '-0.005em', borderBottom: '1px solid var(--c-border-lt)', paddingBottom: '0.875rem' }}>
+                <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.9rem', color: '#0F1A3D', letterSpacing: '-0.005em', borderBottom: '1px solid var(--c-border-lt)', paddingBottom: '0.875rem' }}>
                   Direct Contact
                 </h3>
                 {contactItems.map(({ Icon, color, bg, label, text, href }, i) => {
@@ -49,14 +49,14 @@ export default function Contact() {
                         <Icon size={16} />
                       </div>
                       <div>
-                        <p style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.3rem' }}>{label}</p>
+                        <p style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.3rem' }}>{label}</p>
                         {href ? (
-                          <a href={href} style={{ fontFamily: "'DM Sans'", fontSize: '0.875rem', color: color, textDecoration: 'none', lineHeight: 1.6, wordBreak: 'break-all', transition: 'opacity 0.2s' }}
+                          <a href={href} style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: color, textDecoration: 'none', lineHeight: 1.6, wordBreak: 'break-all', transition: 'opacity 0.2s' }}
                             onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
                             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
                           >{content}</a>
                         ) : (
-                          <p style={{ fontFamily: "'DM Sans'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.6 }}>{content}</p>
+                          <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.6 }}>{content}</p>
                         )}
                       </div>
                     </div>
@@ -70,12 +70,12 @@ export default function Contact() {
               <div style={{ width: '52px', height: '52px', background: '#F0FDF4', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1DA851', margin: '0 auto 1rem', border: '1px solid rgba(29,168,81,0.2)' }}>
                 <FaWhatsapp size={24} />
               </div>
-              <h4 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.95rem', color: '#0F1A3D', marginBottom: '0.5rem' }}>Prefer Instant Response?</h4>
-              <p style={{ fontFamily: "'DM Sans'", fontSize: '0.8rem', color: 'var(--c-text-muted)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+              <h4 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.95rem', color: '#0F1A3D', marginBottom: '0.5rem' }}>Prefer Instant Response?</h4>
+              <p style={{ fontFamily: "'Inter'", fontSize: '0.8rem', color: 'var(--c-text-muted)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
                 Message our purchase desk directly for immediate quote negotiations.
               </p>
               <a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', padding: '0.75rem', background: '#1DA851', color: '#fff', textDecoration: 'none', fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', borderRadius: '7px', transition: 'background 0.2s' }}
+                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', padding: '0.75rem', background: '#1DA851', color: '#fff', textDecoration: 'none', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', borderRadius: '7px', transition: 'background 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.background = '#16A34A'}
                 onMouseLeave={e => e.currentTarget.style.background = '#1DA851'}
               >
@@ -101,7 +101,7 @@ export default function Contact() {
         <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--c-border-lt)', boxShadow: 'var(--shadow-card)' }}>
           <div style={{ background: '#fff', padding: '1rem 1.5rem', borderBottom: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <FiMapPin size={16} color="#1B3FD8" />
-            <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.9rem', color: '#0F1A3D' }}>GK'S Metals — Moosapet, Hyderabad</h3>
+            <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.9rem', color: '#0F1A3D' }}>GK'S Metals — Moosapet, Hyderabad</h3>
           </div>
           <div style={{ height: '380px' }}>
             <iframe

@@ -27,11 +27,11 @@ export default function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1rem' }}>
               <LotusIcon size={40} />
               <div>
-                <div style={{ fontFamily: "'Syne'", fontWeight: 800, fontSize: '1.2rem', color: '#fff', letterSpacing: '-0.01em', lineHeight: 1 }}>GK'S</div>
-                <div style={{ fontFamily: "'DM Sans'", fontWeight: 500, fontSize: '0.58rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.18em', textTransform: 'uppercase' }}>Metals & Minerals</div>
+                <div style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: '1.2rem', color: '#fff', letterSpacing: '-0.01em', lineHeight: 1 }}>GK'S</div>
+                <div style={{ fontFamily: "'Inter'", fontWeight: 500, fontSize: '0.58rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.18em', textTransform: 'uppercase' }}>Metals & Minerals</div>
               </div>
             </div>
-            <p style={{ fontFamily: "'DM Sans'", fontSize: '0.84rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+            <p style={{ fontFamily: "'Inter'", fontSize: '0.84rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
               Trusted bulk supplier of verified industrial metals, graphite, and minerals to manufacturers across India since 2020.
             </p>
             <a
@@ -45,7 +45,7 @@ export default function Footer() {
                 border: '1px solid rgba(37,211,102,0.3)',
                 borderRadius: '6px',
                 color: '#4ADE80',
-                fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.8rem',
+                fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.8rem',
                 textDecoration: 'none', transition: 'background 0.2s',
               }}
               onMouseEnter={e => e.currentTarget.style.background = 'rgba(37,211,102,0.25)'}
@@ -57,14 +57,14 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <p style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.35)', marginBottom: '1.25rem' }}>
+            <p style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.35)', marginBottom: '1.25rem' }}>
               Quick Links
             </p>
             {pageLinks.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'DM Sans'", fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', padding: '0.375rem 0', textDecoration: 'none', transition: 'color 0.2s' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'Inter'", fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', padding: '0.375rem 0', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#fff'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}
               >
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.35)', marginBottom: '1.25rem' }}>
+            <p style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.35)', marginBottom: '1.25rem' }}>
               Contact
             </p>
             {[
@@ -88,14 +88,14 @@ export default function Footer() {
                   <Icon size={13} />
                 </div>
                 {href ? (
-                  <a href={href} style={{ fontFamily: "'DM Sans'", fontSize: '0.83rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', lineHeight: 1.6, transition: 'color 0.2s', wordBreak: 'break-all' }}
+                  <a href={href} style={{ fontFamily: "'Inter'", fontSize: '0.83rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', lineHeight: 1.6, transition: 'color 0.2s', wordBreak: 'break-all' }}
                     onMouseEnter={e => e.currentTarget.style.color = '#fff'}
                     onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}
                   >
                     {text.split('\n').map((l, j) => <span key={j}>{l}{j < text.split('\n').length - 1 && <br />}</span>)}
                   </a>
                 ) : (
-                  <p style={{ fontFamily: "'DM Sans'", fontSize: '0.83rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
+                  <p style={{ fontFamily: "'Inter'", fontSize: '0.83rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
                     {text.split('\n').map((l, j) => <span key={j}>{l}{j < text.split('\n').length - 1 && <br />}</span>)}
                   </p>
                 )}
@@ -105,10 +105,10 @@ export default function Footer() {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.75rem', flexWrap: 'wrap', gap: '0.75rem' }}>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
             © {year} GK'S Metals & Minerals. All rights reserved. Hyderabad, India.
           </p>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
             Verified Grades · PAN India Supply · ISO Quality Standards
           </p>
         </div>

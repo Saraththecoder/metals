@@ -39,13 +39,13 @@ export default function ThankYou() {
         </div>
 
         <div>
-          <h1 style={{ fontFamily: "'Syne'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3rem)', color: '#0F1A3D', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '1rem' }}>
+          <h1 style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3rem)', color: '#0F1A3D', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '1rem' }}>
             Enquiry Received!
           </h1>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: '0.9375rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, marginBottom: '0.5rem' }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: '0.9375rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, marginBottom: '0.5rem' }}>
             Thank you for reaching out to GK'S Metals & Minerals. Our team will review your specifications and contact you within <strong style={{ color: '#1B3FD8' }}>24 hours</strong>.
           </p>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: '0.85rem', color: 'var(--c-text-muted)' }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: '0.85rem', color: 'var(--c-text-muted)' }}>
             For urgent queries, call our logistics desk directly.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function ThankYou() {
           </Link>
         </div>
 
-        <Link to="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'DM Sans'", fontWeight: 500, fontSize: '0.8rem', color: 'var(--c-text-muted)', textDecoration: 'none', transition: 'color 0.2s' }}
+        <Link to="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'Inter'", fontWeight: 500, fontSize: '0.8rem', color: 'var(--c-text-muted)', textDecoration: 'none', transition: 'color 0.2s' }}
           onMouseEnter={e => e.currentTarget.style.color = '#1B3FD8'}
           onMouseLeave={e => e.currentTarget.style.color = 'var(--c-text-muted)'}
         >
@@ -69,10 +69,10 @@ export default function ThankYou() {
 
         {/* Countdown */}
         <div style={{ background: '#fff', border: '1px solid var(--c-border-lt)', borderRadius: '30px', padding: '0.625rem 1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.625rem', boxShadow: 'var(--shadow-sm)' }}>
-          <div style={{ width: '28px', height: '28px', borderRadius: '50%', border: '2px solid #1B3FD8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Syne'", fontWeight: 800, fontSize: '0.85rem', color: '#1B3FD8' }}>
+          <div style={{ width: '28px', height: '28px', borderRadius: '50%', border: '2px solid #1B3FD8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Outfit'", fontWeight: 800, fontSize: '0.85rem', color: '#1B3FD8' }}>
             {countdown}
           </div>
-          <span style={{ fontFamily: "'DM Sans'", fontSize: '0.78rem', color: 'var(--c-text-muted)' }}>Redirecting to home page...</span>
+          <span style={{ fontFamily: "'Inter'", fontSize: '0.78rem', color: 'var(--c-text-muted)' }}>Redirecting to home page...</span>
         </div>
       </div>
     </div>

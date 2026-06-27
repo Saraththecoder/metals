@@ -92,78 +92,45 @@ export default function Home() {
           {/* HERO GRID — LEFT: logo, RIGHT: text */}
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }}>
 
-            {/* ── LEFT: LOGO VISUAL ── */}
+            {/* ── LEFT: HERO IMAGE ── */}
             <motion.div
-              className="hero-logo"
-              initial={{ opacity: 0, scale: 0.75, rotate: -8 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-image-container"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}
             >
-              {/* Pulsing halos */}
-              {[380, 310, 240].map((d, i) => (
-                <motion.div key={i}
-                  style={{ position: 'absolute', width: d, height: d, borderRadius: '50%', border: `1.5px solid ${['rgba(27,63,216,0.14)','rgba(59,181,74,0.12)','rgba(233,27,140,0.1)'][i]}`, top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}
-                  animate={{ scale: [1, 1.07, 1], opacity: [0.6, 0.2, 0.6] }}
-                  transition={{ duration: 3.5 + i * 0.6, delay: i * 0.7, repeat: Infinity, ease: 'easeInOut' }}
-                />
-              ))}
-
-              {/* Orbiting dots */}
-              {[
-                { color: '#E91B8C', size: 13, r: 175, start: 0,   dur: 11 },
-                { color: '#3BB54A', size: 9,  r: 175, start: 90,  dur: 11 },
-                { color: '#F5C800', size: 11, r: 175, start: 180, dur: 11 },
-                { color: '#29B4F6', size: 9,  r: 175, start: 270, dur: 11 },
-              ].map((orb, i) => {
-                const rad = (orb.start - 90) * Math.PI / 180;
-                return (
-                  <motion.div key={i}
-                    style={{ position: 'absolute', width: orb.size, height: orb.size, borderRadius: '50%', background: orb.color, boxShadow: `0 0 ${orb.size}px ${orb.color}`, top: '50%', left: '50%', marginLeft: -orb.size / 2, marginTop: -orb.size / 2 }}
-                    animate={{
-                      x: [0, 1, 2, 3, 4].map(t => orb.r * Math.cos(rad + t * Math.PI / 2)),
-                      y: [0, 1, 2, 3, 4].map(t => orb.r * Math.sin(rad + t * Math.PI / 2)),
-                    }}
-                    transition={{ duration: orb.dur, repeat: Infinity, ease: 'linear' }}
-                  />
-                );
-              })}
-
-              {/* Main logo circle */}
-              <div style={{ position: 'relative', zIndex: 2, width: '270px', height: '270px', borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 20px 60px rgba(27,63,216,0.2), 0 4px 16px rgba(27,63,216,0.1)' }}>
-                {/* Spinning rainbow ring */}
-                <motion.div
-                  style={{ position: 'absolute', inset: '-3px', borderRadius: '50%', background: 'conic-gradient(from 0deg, #E91B8C, #FF6320, #F5C800, #3BB54A, #29B4F6, #7C1FA2, #1B3FD8, #E91B8C)', zIndex: -1 }}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                />
-                <div style={{ position: 'absolute', inset: '3px', borderRadius: '50%', background: '#fff', zIndex: 0 }} />
-                <motion.img
-                  src={logoImg}
-                  alt="GK'S Metals & Minerals"
-                  onLoad={() => setImgLoaded(true)}
-                  animate={imgLoaded ? { scale: [1, 1.04, 1] } : {}}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ width: '200px', height: '200px', objectFit: 'contain', position: 'relative', zIndex: 1, filter: 'drop-shadow(0 6px 12px rgba(27,63,216,0.15))' }}
-                />
-              </div>
+              <motion.img
+                src="https://res.cloudinary.com/doegh5lpl/image/upload/v1782589490/piles-of-raw-iron-ore-rocks-are-clustered-near-a-steel-manufacturing-plant-as-industrial-activity-continues-nearby-under-clear-skies-and-bright-lighting-conditions-photo_ycxere.webp"
+                alt="Industrial Raw Materials"
+                style={{
+                  width: '100%',
+                  maxWidth: '540px',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: '16px',
+                  filter: 'drop-shadow(0 20px 40px rgba(27,63,216,0.12))'
+                }}
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              />
 
               {/* Floating info cards */}
-              <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.95 }}
-                style={{ position: 'absolute', bottom: '5px', right: '-5px', background: '#fff', borderRadius: '12px', padding: '0.75rem 1rem', boxShadow: '0 8px 28px rgba(27,63,216,0.14)', border: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.625rem', zIndex: 10 }}>
+              <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
+                style={{ position: 'absolute', bottom: '10%', right: '-5%', background: '#fff', borderRadius: '12px', padding: '0.75rem 1rem', boxShadow: '0 8px 28px rgba(27,63,216,0.14)', border: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.625rem', zIndex: 10 }}>
                 <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1B3FD8' }}><FiTruck size={16} /></div>
                 <div>
-                  <p style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.8rem', color: '#0F1A3D', lineHeight: 1 }}>PAN India</p>
-                  <p style={{ fontFamily: "'DM Sans'", fontSize: '0.64rem', color: 'var(--c-text-muted)', marginTop: '2px' }}>Delivery Network</p>
+                  <p style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.8rem', color: '#0F1A3D', lineHeight: 1 }}>PAN India</p>
+                  <p style={{ fontFamily: "'Inter'", fontSize: '0.64rem', color: 'var(--c-text-muted)', marginTop: '2px' }}>Delivery Network</p>
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 1.1 }}
-                style={{ position: 'absolute', top: '15px', left: '-5px', background: '#fff', borderRadius: '12px', padding: '0.75rem 1rem', boxShadow: '0 8px 28px rgba(59,181,74,0.18)', border: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.625rem', zIndex: 10 }}>
+              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
+                style={{ position: 'absolute', top: '15%', left: '-5%', background: '#fff', borderRadius: '12px', padding: '0.75rem 1rem', boxShadow: '0 8px 28px rgba(59,181,74,0.18)', border: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.625rem', zIndex: 10 }}>
                 <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#EEF6EE', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3BB54A' }}><FiAward size={16} /></div>
                 <div>
-                  <p style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.8rem', color: '#0F1A3D', lineHeight: 1 }}>500+ Orders</p>
-                  <p style={{ fontFamily: "'DM Sans'", fontSize: '0.64rem', color: 'var(--c-text-muted)', marginTop: '2px' }}>Successfully Fulfilled</p>
+                  <p style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.8rem', color: '#0F1A3D', lineHeight: 1 }}>500+ Orders</p>
+                  <p style={{ fontFamily: "'Inter'", fontSize: '0.64rem', color: 'var(--c-text-muted)', marginTop: '2px' }}>Successfully Fulfilled</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -184,7 +151,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 + i * 0.09 }}
                     style={{
-                      fontFamily: "'Syne', sans-serif", fontWeight: 800,
+                      fontFamily: "'Outfit', sans-serif", fontWeight: 800,
                       fontSize: 'clamp(2rem, 5vw, 4rem)', lineHeight: 1.0,
                       letterSpacing: '-0.025em', margin: 0,
                       color: i === 1 ? '#1B3FD8' : '#0F1A3D',
@@ -201,7 +168,7 @@ export default function Home() {
 
               {/* Subtext */}
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.32 }}
-                style={{ fontFamily: "'DM Sans'", fontSize: '0.9875rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, maxWidth: '490px', marginBottom: '2rem' }}>
+                style={{ fontFamily: "'Inter'", fontSize: '0.9875rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, maxWidth: '490px', marginBottom: '2rem' }}>
                 GK'S Metals & Minerals supplies graphite, iron ore, silica, and 12+ verified industrial materials to manufacturers across India — 5 years of proven consistency, zero compromise on purity.
               </motion.p>
 
@@ -216,7 +183,7 @@ export default function Home() {
                 </motion.button>
                 <motion.a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.75rem 1.125rem', borderRadius: '7px', background: '#1DA851', color: '#fff', fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.82rem', textDecoration: 'none', boxShadow: '0 4px 14px rgba(29,168,81,0.3)' }}>
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.75rem 1.125rem', borderRadius: '7px', background: '#1DA851', color: '#fff', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.82rem', textDecoration: 'none', boxShadow: '0 4px 14px rgba(29,168,81,0.3)' }}>
                   <FaWhatsapp size={16} /> WhatsApp
                 </motion.a>
               </motion.div>
@@ -231,7 +198,7 @@ export default function Home() {
                   { text: '24hr Response',      color: '#E91B8C' },
                 ].map((t, i) => (
                   <motion.span key={i} whileHover={{ y: -2, boxShadow: '0 4px 14px rgba(0,0,0,0.1)' }}
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.7rem', color: 'var(--c-text-secondary)', background: '#fff', border: '1px solid var(--c-border)', borderRadius: '20px', padding: '0.3rem 0.75rem', boxShadow: 'var(--shadow-sm)', cursor: 'default', transition: 'all 0.2s' }}>
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.7rem', color: 'var(--c-text-secondary)', background: '#fff', border: '1px solid var(--c-border)', borderRadius: '20px', padding: '0.3rem 0.75rem', boxShadow: 'var(--shadow-sm)', cursor: 'default', transition: 'all 0.2s' }}>
                     <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: t.color }} />
                     {t.text}
                   </motion.span>
@@ -246,7 +213,7 @@ export default function Home() {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.6 }}
           style={{ position: 'absolute', bottom: '1.75rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', cursor: 'pointer', zIndex: 5 }}
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}>
-          <span style={{ fontFamily: "'DM Sans'", fontSize: '0.6rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-faint)' }}>Scroll</span>
+          <span style={{ fontFamily: "'Inter'", fontSize: '0.6rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-faint)' }}>Scroll</span>
           <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}>
             <FiChevronDown size={18} color="var(--c-text-faint)" />
           </motion.div>
@@ -262,10 +229,10 @@ export default function Home() {
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`stat-item stat-${i}`}
                 style={{ textAlign: 'center', padding: '2.25rem 1rem', borderRight: i % 2 === 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
-                <div style={{ fontFamily: "'Syne'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3rem)', color: s.color, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '0.375rem' }}>
+                <div style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3rem)', color: s.color, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '0.375rem' }}>
                   <CountUp to={s.val} suffix={s.suffix} />
                 </div>
-                <div style={{ fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)' }}>{s.label}</div>
+                <div style={{ fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)' }}>{s.label}</div>
               </motion.div>
             ))}
           </div>
@@ -308,8 +275,8 @@ export default function Home() {
                     style={{ width: '46px', height: '46px', background: f.bg, borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: f.color, marginBottom: '1.125rem' }}>
                     <Icon size={22} />
                   </motion.div>
-                  <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.97rem', color: '#0F1A3D', marginBottom: '0.6rem' }}>{f.title}</h3>
-                  <p style={{ fontFamily: "'DM Sans'", fontSize: '0.84rem', color: 'var(--c-text-muted)', lineHeight: 1.72 }}>{f.text}</p>
+                  <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.97rem', color: '#0F1A3D', marginBottom: '0.6rem' }}>{f.title}</h3>
+                  <p style={{ fontFamily: "'Inter'", fontSize: '0.84rem', color: 'var(--c-text-muted)', lineHeight: 1.72 }}>{f.text}</p>
                 </motion.div>
               );
             })}
@@ -331,26 +298,26 @@ export default function Home() {
             <div style={{ minWidth: '220px' }}>
               <motion.img src={logoImg} alt="GK'S" initial={{ scale: 0.8, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, type: 'spring', stiffness: 200 }}
                 style={{ width: '72px', height: '72px', objectFit: 'contain', display: 'block', marginBottom: '1rem' }} />
-              <h2 style={{ fontFamily: "'Syne'", fontWeight: 800, fontSize: 'clamp(1.3rem,3vw,2rem)', color: '#0F1A3D', letterSpacing: '-0.015em', lineHeight: 1.1, marginBottom: '0.75rem' }}>
+              <h2 style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: 'clamp(1.3rem,3vw,2rem)', color: '#0F1A3D', letterSpacing: '-0.015em', lineHeight: 1.1, marginBottom: '0.75rem' }}>
                 Need a Specific<br />Material?
               </h2>
-              <p style={{ fontFamily: "'DM Sans'", fontSize: '0.875rem', color: 'var(--c-text-muted)', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-muted)', lineHeight: 1.7 }}>
                 Share your requirements — we'll respond within 24 hours.
               </p>
             </div>
             <form onSubmit={handleMiniSubmit}>
               <div className="mini-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.375rem' }}>Your Name *</label>
+                  <label style={{ display: 'block', fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.375rem' }}>Your Name *</label>
                   <input type="text" required placeholder="e.g. Ramesh Kumar" value={miniForm.name} onChange={e => setMiniForm(p => ({ ...p, name: e.target.value }))} className="form-input" />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.375rem' }}>Phone *</label>
+                  <label style={{ display: 'block', fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.375rem' }}>Phone *</label>
                   <input type="tel" required placeholder="10-digit mobile" value={miniForm.phone} onChange={e => setMiniForm(p => ({ ...p, phone: e.target.value }))} className="form-input" />
                 </div>
               </div>
               <div style={{ marginBottom: '0.875rem' }}>
-                <label style={{ display: 'block', fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.375rem' }}>Material Needed *</label>
+                <label style={{ display: 'block', fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.375rem' }}>Material Needed *</label>
                 <select required value={miniForm.product} onChange={e => setMiniForm(p => ({ ...p, product: e.target.value }))} className="form-input" style={{ cursor: 'pointer' }}>
                   <option value="">Select a product...</option>
                   {products.map(p => <option key={p.slug} value={p.name}>{p.name}</option>)}
@@ -359,8 +326,8 @@ export default function Home() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                 <AnimatePresence mode="wait">
                   {miniError
-                    ? <motion.p key="e" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} style={{ fontFamily: "'DM Sans'", fontSize: '0.8rem', color: '#E91B8C' }}>{miniError}</motion.p>
-                    : <p style={{ fontFamily: "'DM Sans'", fontSize: '0.78rem', color: 'var(--c-text-muted)' }}>24-hour guaranteed response</p>
+                    ? <motion.p key="e" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} style={{ fontFamily: "'Inter'", fontSize: '0.8rem', color: '#E91B8C' }}>{miniError}</motion.p>
+                    : <p style={{ fontFamily: "'Inter'", fontSize: '0.78rem', color: 'var(--c-text-muted)' }}>24-hour guaranteed response</p>
                   }
                 </AnimatePresence>
                 <motion.button type="submit" disabled={miniLoading} className="btn-primary" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
@@ -387,13 +354,13 @@ export default function Home() {
                 whileHover={{ y: -5, boxShadow: '0 14px 40px rgba(0,0,0,0.1)' }}
                 style={{ background: '#fff', borderRadius: '14px', border: '1px solid var(--c-border-lt)', borderTop: `3px solid ${t.color}`, padding: '2rem', boxShadow: 'var(--shadow-card)', position: 'relative', overflow: 'hidden', cursor: 'default' }}>
                 <div style={{ position: 'absolute', top: '1rem', right: '1.5rem', fontFamily: 'Georgia,serif', fontSize: '4.5rem', color: `${t.color}15`, lineHeight: 1, userSelect: 'none' }}>"</div>
-                <p style={{ fontFamily: "'DM Sans'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.78, fontStyle: 'italic', marginBottom: '1.5rem' }}>"{t.quote}"</p>
+                <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.78, fontStyle: 'italic', marginBottom: '1.5rem' }}>"{t.quote}"</p>
                 <div style={{ borderTop: '1px solid var(--c-border-lt)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                   <div>
-                    <p style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.87rem', color: '#0F1A3D', marginBottom: '2px' }}>{t.author}</p>
-                    <p style={{ fontFamily: "'DM Sans'", fontSize: '0.75rem', color: 'var(--c-text-muted)' }}>{t.role}</p>
+                    <p style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.87rem', color: '#0F1A3D', marginBottom: '2px' }}>{t.author}</p>
+                    <p style={{ fontFamily: "'Inter'", fontSize: '0.75rem', color: 'var(--c-text-muted)' }}>{t.role}</p>
                   </div>
-                  <span style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: t.color }}>{t.company}</span>
+                  <span style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: t.color }}>{t.company}</span>
                 </div>
               </motion.div>
             ))}

@@ -43,11 +43,11 @@ export default function About() {
         <div style={{ maxWidth: '720px', margin: '0 auto', position: 'relative' }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}><LotusIcon size={64} /></div>
           <p className="label-tag" style={{ marginBottom: '0.875rem', display: 'block' }}>Our Story</p>
-          <h1 style={{ fontFamily: "'Syne'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3.5rem)', letterSpacing: '-0.025em', color: '#0F1A3D', lineHeight: 1.05, marginBottom: '1.25rem' }}>
+          <h1 style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3.5rem)', letterSpacing: '-0.025em', color: '#0F1A3D', lineHeight: 1.05, marginBottom: '1.25rem' }}>
             Built on Quality.<br />
             <span style={{ color: '#1B3FD8' }}>Driven by Trust.</span>
           </h1>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: '1rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, maxWidth: '500px', margin: '0 auto' }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: '1rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, maxWidth: '500px', margin: '0 auto' }}>
             5 years of supplying India's manufacturing sector with precision-grade metals, minerals, and graphite products. Founded in Hyderabad, serving PAN India.
           </p>
         </div>
@@ -59,10 +59,10 @@ export default function About() {
           <div style={{ display: 'grid', gap: '4rem', gridTemplateColumns: '1fr' }} className="about-grid">
             <div>
               <SectionHeading label="About the Company" title="Who We Are" align="left" />
-              <p style={{ fontFamily: "'DM Sans'", fontSize: '0.9375rem', color: 'var(--c-text-secondary)', lineHeight: 1.82, marginBottom: '1rem' }}>
+              <p style={{ fontFamily: "'Inter'", fontSize: '0.9375rem', color: 'var(--c-text-secondary)', lineHeight: 1.82, marginBottom: '1rem' }}>
                 GK'S Metals & Minerals is a Hyderabad-based trading company specialising in the bulk supply of metals, minerals, and graphite products to industrial buyers across India. Founded with a focus on quality consistency and supply reliability, we serve clients in steel, ceramics, rubber, electronics, and chemical processing industries.
               </p>
-              <p style={{ fontFamily: "'DM Sans'", fontSize: '0.9375rem', color: 'var(--c-text-secondary)', lineHeight: 1.82 }}>
+              <p style={{ fontFamily: "'Inter'", fontSize: '0.9375rem', color: 'var(--c-text-secondary)', lineHeight: 1.82 }}>
                 Through strategic partnerships with mining hubs and secondary processing mills, we secure and supply premium raw materials. Our dedicated team manages transport logistics, quality control compliance, and customer delivery timelines to ensure your operations never face downtime.
               </p>
             </div>
@@ -75,8 +75,8 @@ export default function About() {
                 { val: 'PAN India', label: 'Supply Reach', color: '#FF6320', bg: '#FFF3ED' },
               ].map((s, i) => (
                 <div key={i} style={{ background: s.bg, padding: '2rem', textAlign: 'center' }}>
-                  <div style={{ fontFamily: "'Syne'", fontWeight: 800, fontSize: '2.25rem', color: s.color, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '0.375rem' }}>{s.val}</div>
-                  <div style={{ fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)' }}>{s.label}</div>
+                  <div style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: '2.25rem', color: s.color, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '0.375rem' }}>{s.val}</div>
+                  <div style={{ fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)' }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -106,17 +106,17 @@ export default function About() {
                   <div style={{ width: '44px', height: '44px', background: item.bg, borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: item.color, marginBottom: '1.25rem' }}>
                     <Icon size={20} />
                   </div>
-                  <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '1rem', color: '#0F1A3D', marginBottom: '0.875rem' }}>{item.title}</h3>
+                  <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '1rem', color: '#0F1A3D', marginBottom: '0.875rem' }}>{item.title}</h3>
                   {item.isList ? (
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       {item.items.map((li, j) => (
-                        <li key={j} style={{ fontFamily: "'DM Sans'", fontSize: '0.83rem', color: 'var(--c-text-muted)', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+                        <li key={j} style={{ fontFamily: "'Inter'", fontSize: '0.83rem', color: 'var(--c-text-muted)', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
                           <span style={{ color: item.color, marginTop: '0.1rem', flexShrink: 0 }}>▸</span> {li}
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p style={{ fontFamily: "'DM Sans'", fontSize: '0.875rem', color: 'var(--c-text-muted)', lineHeight: 1.75 }}>{item.text}</p>
+                    <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-muted)', lineHeight: 1.75 }}>{item.text}</p>
                   )}
                 </motion.div>
               );
@@ -132,7 +132,7 @@ export default function About() {
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }} className="map-grid">
             <div style={{ background: '#fff', border: '1px solid var(--c-border-lt)', borderRadius: '12px', padding: '2.5rem', boxShadow: 'var(--shadow-card)', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '1rem', color: '#0F1A3D', borderBottom: '1px solid var(--c-border-lt)', paddingBottom: '1rem' }}>Corporate Office</h3>
+              <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '1rem', color: '#0F1A3D', borderBottom: '1px solid var(--c-border-lt)', paddingBottom: '1rem' }}>Corporate Office</h3>
               {[
                 { Icon: FiMapPin, color: '#1B3FD8', bg: '#EEF2FF', label: 'Address', text: 'Road No. 7, Anjaneya Nagar,\nMoosapet, Hyderabad,\nTelangana 500018' },
                 { Icon: FiClock, color: '#FF6320', bg: '#FFF3ED', label: 'Business Hours', text: 'Monday – Saturday\n9:00 AM – 7:00 PM IST' },
@@ -142,8 +142,8 @@ export default function About() {
                     <Icon size={16} />
                   </div>
                   <div>
-                    <p style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.63rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.3rem' }}>{label}</p>
-                    <p style={{ fontFamily: "'DM Sans'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.65 }}>
+                    <p style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.63rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.3rem' }}>{label}</p>
+                    <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.65 }}>
                       {text.split('\n').map((l, j) => <span key={j}>{l}{j < text.split('\n').length - 1 && <br />}</span>)}
                     </p>
                   </div>

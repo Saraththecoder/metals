@@ -61,10 +61,10 @@ export default function Navbar() {
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
             <LotusIcon size={44} />
             <div>
-              <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: '1.15rem', color: '#1B3FD8', letterSpacing: '-0.01em', lineHeight: 1 }}>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: '1.15rem', color: '#1B3FD8', letterSpacing: '-0.01em', lineHeight: 1 }}>
                 GK'S
               </div>
-              <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: '0.55rem', color: 'var(--c-text-muted)', letterSpacing: '0.2em', textTransform: 'uppercase', lineHeight: 1, marginTop: '2px' }}>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: '0.55rem', color: 'var(--c-text-muted)', letterSpacing: '0.2em', textTransform: 'uppercase', lineHeight: 1, marginTop: '2px' }}>
                 Metals & Minerals
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function Navbar() {
                 key={path}
                 to={path}
                 style={({ isActive }) => ({
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 600,
                   fontSize: '0.8rem',
                   textTransform: 'uppercase',
@@ -103,7 +103,7 @@ export default function Navbar() {
               href="tel:+919000123813"
               style={{
                 display: 'flex', alignItems: 'center', gap: '0.375rem',
-                fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.78rem',
+                fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '0.78rem',
                 color: 'var(--c-text-muted)', textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
@@ -157,7 +157,7 @@ export default function Navbar() {
                       display: 'block',
                       padding: '0.75rem 1rem',
                       borderRadius: '8px',
-                      fontFamily: "'Syne', sans-serif", fontWeight: 700,
+                      fontFamily: "'Outfit', sans-serif", fontWeight: 700,
                       fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.08em',
                       color: isActive ? '#1B3FD8' : 'var(--c-text-secondary)',
                       background: isActive ? 'var(--c-blue-pale)' : 'transparent',
@@ -168,7 +168,7 @@ export default function Navbar() {
                   </NavLink>
                 ))}
                 <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--c-border-lt)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <a href="tel:+919000123813" style={{ color: 'var(--c-text-secondary)', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: "'DM Sans'" }}>
+                  <a href="tel:+919000123813" style={{ color: 'var(--c-text-secondary)', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: "'Inter'" }}>
                     <FiPhone size={15} /> +91 90001 23813
                   </a>
                   <button onClick={() => { closeMenu(); navigate('/contact'); }} className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>

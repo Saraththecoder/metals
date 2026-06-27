@@ -32,8 +32,8 @@ export default {
         'txt-muted':     '#6B7599',
       },
       fontFamily: {
-        display: ["'Syne'", "sans-serif"],
-        body:    ["'DM Sans'", "sans-serif"],
+        display: ["'Outfit'", "sans-serif"],
+        body:    ["'Inter'", "sans-serif"],
       },
     },
   },

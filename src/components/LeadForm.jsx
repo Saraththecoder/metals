@@ -60,7 +60,7 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
 
   const labelStyle = {
     display: 'block',
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'Inter', sans-serif",
     fontWeight: 700,
     fontSize: '0.63rem',
     textTransform: 'uppercase',
@@ -69,7 +69,7 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
     marginBottom: '0.4rem',
   };
 
-  const errorStyle = { fontFamily: "'DM Sans'", fontSize: '0.75rem', color: '#E91B8C', marginTop: '0.3rem' };
+  const errorStyle = { fontFamily: "'Inter'", fontSize: '0.75rem', color: '#E91B8C', marginTop: '0.3rem' };
   const iconStyle = { position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--c-text-faint)', pointerEvents: 'none', zIndex: 1 };
 
   const inputStyle = (field) => ({
@@ -77,7 +77,7 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
     background: '#fff',
     border: `1.5px solid ${errors[field] ? '#E91B8C' : 'var(--c-border)'}`,
     color: 'var(--c-text-primary)',
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'Inter', sans-serif",
     fontSize: '0.875rem',
     padding: '0.75rem 0.875rem 0.75rem 2.625rem',
     borderRadius: '7px',
@@ -95,10 +95,10 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
       <div className="lotus-gradient" style={{ height: '3px' }} />
 
       <div style={{ padding: '2rem' }}>
-        <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '1.1rem', color: '#0F1A3D', marginBottom: '0.3rem', letterSpacing: '-0.01em' }}>
+        <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '1.1rem', color: '#0F1A3D', marginBottom: '0.3rem', letterSpacing: '-0.01em' }}>
           {heading || 'Request a Free Quote'}
         </h3>
-        <p style={{ fontFamily: "'DM Sans'", fontSize: '0.82rem', color: 'var(--c-text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+        <p style={{ fontFamily: "'Inter'", fontSize: '0.82rem', color: 'var(--c-text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
           {subtext || 'Fill out the form below. We respond within 24 hours.'}
         </p>
 
@@ -188,7 +188,7 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
             <><FiSend size={15}/> Submit Enquiry</>
           )}
         </button>
-        <p style={{ fontFamily: "'DM Sans'", fontSize: '0.72rem', color: 'var(--c-text-faint)', textAlign: 'center', marginTop: '0.75rem' }}>
+        <p style={{ fontFamily: "'Inter'", fontSize: '0.72rem', color: 'var(--c-text-faint)', textAlign: 'center', marginTop: '0.75rem' }}>
           We never share your information. 24-hour response guaranteed.
         </p>
       </div>

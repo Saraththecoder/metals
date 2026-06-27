@@ -77,7 +77,7 @@ export default function ProductCard({ product, showImage = true }) {
             backdropFilter: 'blur(4px)',
           }}>
             <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: cat.dot, flexShrink: 0 }} />
-            <span style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: cat.badge }}>
+            <span style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: cat.badge }}>
               {product.category}
             </span>
           </div>
@@ -107,30 +107,30 @@ export default function ProductCard({ product, showImage = true }) {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', background: cat.bg, border: `1px solid ${cat.border}`, borderRadius: '20px', padding: '0.2rem 0.625rem' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: cat.dot }} />
-              <span style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: cat.badge }}>{product.category}</span>
+              <span style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: cat.badge }}>{product.category}</span>
             </div>
           </div>
         )}
 
         {/* Name & Tagline */}
         <div>
-          <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '1rem', color: '#0F1A3D', marginBottom: '0.275rem', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
+          <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '1rem', color: '#0F1A3D', marginBottom: '0.275rem', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
             {product.name}
           </h3>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: '0.78rem', color: 'var(--c-text-muted)', lineHeight: 1.5, fontStyle: 'italic' }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: '0.78rem', color: 'var(--c-text-muted)', lineHeight: 1.5, fontStyle: 'italic' }}>
             {product.tagline}
           </p>
         </div>
 
         {/* Specs */}
         <div>
-          <p style={{ fontFamily: "'DM Sans'", fontWeight: 700, fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-faint)', marginBottom: '0.4rem' }}>Key Specs</p>
+          <p style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-faint)', marginBottom: '0.4rem' }}>Key Specs</p>
           {product.specs.slice(0, 2).map((spec, i) => {
             const { key, val } = parseSpec(spec);
             return (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.35rem 0', borderBottom: '1px solid var(--c-border-lt)' }}>
-                <span style={{ fontFamily: "'DM Sans'", fontSize: '0.76rem', color: 'var(--c-text-muted)' }}>{key}</span>
-                <span style={{ fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.76rem', color: '#0F1A3D' }}>{val}</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: '0.76rem', color: 'var(--c-text-muted)' }}>{key}</span>
+                <span style={{ fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.76rem', color: '#0F1A3D' }}>{val}</span>
               </div>
             );
           })}
@@ -139,7 +139,7 @@ export default function ProductCard({ product, showImage = true }) {
         {/* Application chips */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
           {product.applications.slice(0, 3).map((app, i) => (
-            <span key={i} style={{ fontFamily: "'DM Sans'", fontSize: '0.66rem', fontWeight: 500, color: 'var(--c-text-muted)', padding: '0.2rem 0.6rem', background: 'var(--c-bg-subtle)', border: '1px solid var(--c-border-lt)', borderRadius: '20px' }}>
+            <span key={i} style={{ fontFamily: "'Inter'", fontSize: '0.66rem', fontWeight: 500, color: 'var(--c-text-muted)', padding: '0.2rem 0.6rem', background: 'var(--c-bg-subtle)', border: '1px solid var(--c-border-lt)', borderRadius: '20px' }}>
               {app}
             </span>
           ))}
@@ -157,7 +157,7 @@ export default function ProductCard({ product, showImage = true }) {
               padding: '0.6rem 0.5rem',
               border: '1.5px solid var(--c-border)', borderRadius: '7px',
               color: 'var(--c-text-secondary)',
-              fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.7rem',
+              fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.7rem',
               textTransform: 'uppercase', letterSpacing: '0.07em',
               textDecoration: 'none', transition: 'all 0.2s',
             }}
@@ -175,7 +175,7 @@ export default function ProductCard({ product, showImage = true }) {
               padding: '0.6rem 0.5rem',
               background: '#1B3FD8', border: '1.5px solid #1B3FD8',
               borderRadius: '7px', color: '#fff',
-              fontFamily: "'DM Sans'", fontWeight: 600, fontSize: '0.7rem',
+              fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.7rem',
               textTransform: 'uppercase', letterSpacing: '0.07em',
               textDecoration: 'none', transition: 'all 0.2s',
             }}
