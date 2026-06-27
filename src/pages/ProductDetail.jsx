@@ -78,9 +78,12 @@ export default function ProductDetail() {
               <p style={{ fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.75rem' }}>
                 Product Overview
               </p>
-              <p style={{ fontFamily: "'Inter'", fontSize: '0.9rem', color: 'var(--c-text-secondary)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: "'Inter'", fontSize: '0.9rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                 {product.description}
               </p>
+              <a href={`https://wa.me/919000123813?text=${encodeURIComponent(`Hi GK'S Metals, I want to request a free sample for ${product.name}.`)}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.25rem', border: '2px solid #E91B8C', color: '#E91B8C', background: 'transparent', borderRadius: '6px', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.8rem', textTransform: 'uppercase', textDecoration: 'none', transition: 'all 0.2s' }} onMouseEnter={e => { e.currentTarget.style.background = '#FDF2FA'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                Order a Free Sample
+              </a>
             </div>
 
             {/* Specifications table */}
@@ -88,8 +91,8 @@ export default function ProductDetail() {
               <p style={{ fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-muted)', marginBottom: '0.875rem' }}>
                 Technical Specifications
               </p>
-              <div style={{ border: '1px solid var(--c-border)', overflow: 'hidden' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: "'Inter'", fontSize: '0.85rem' }}>
+              <div style={{ border: '1px solid var(--c-border)', overflowX: 'auto', borderRadius: '8px' }}>
+                <table style={{ width: '100%', minWidth: '300px', borderCollapse: 'collapse', fontFamily: "'Inter'", fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'var(--c-elevated)', borderBottom: '1px solid var(--c-border)' }}>
                       <th style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 600, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--c-blue-lt)' }}>Parameter</th>

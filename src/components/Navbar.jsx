@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import logoImg from '../assets/logo.png';
 
 const navLinks = [
@@ -40,12 +41,27 @@ export default function Navbar() {
   return (
     <>
       {/* Rainbow top stripe */}
-      <div className="lotus-gradient lotus-divider" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 101 }} />
+      <div className="lotus-gradient lotus-divider" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 102 }} />
+
+      {/* Announcement Banner */}
+      <div style={{
+        position: 'fixed', top: '3px', left: 0, right: 0, zIndex: 101,
+        background: '#0F1A3D', color: '#fff', textAlign: 'center', padding: '0.4rem 1rem',
+        fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600,
+        display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem',
+        flexWrap: 'wrap'
+      }}>
+        <span style={{ color: '#F5C800' }}>⚡ Need bulk materials?</span> 
+        <span>Get an instant custom quote on WhatsApp:</span>
+        <a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer" style={{ color: '#4ADE80', display: 'inline-flex', alignItems: 'center', gap: '0.25rem', textDecoration: 'none' }} onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'} onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}>
+          <FaWhatsapp size={14} /> +91 90001 23813
+        </a>
+      </div>
 
       <header
         style={{
           position: 'fixed',
-          top: '3px',
+          top: '35px',
           left: 0, right: 0,
           zIndex: 100,
           transition: 'background 0.3s, box-shadow 0.3s',
@@ -181,8 +197,8 @@ export default function Navbar() {
         </AnimatePresence>
       </header>
 
-      {/* Spacer for fixed header + rainbow stripe */}
-      <div style={{ height: '71px' }} />
+      {/* Spacer for fixed header + banner + rainbow stripe */}
+      <div style={{ height: '103px' }} />
 
       <style>{`
         @media (min-width: 768px) {

@@ -13,6 +13,7 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
     email: '',
     company: '',
     product: defaultProductSlug ? products.find(p => p.slug === defaultProductSlug)?.name || '' : '',
+    requestType: 'Bulk Quote',
     message: ''
   });
 
@@ -48,7 +49,7 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
         await new Promise(r => setTimeout(r, 1200));
       }
       setTimeout(() => {
-        const txt = `Hi GK'S Metals, I submitted an enquiry for ${formData.product || 'your products'}.\n- Name: ${formData.name}\n- Phone: ${formData.phone}`;
+        const txt = `Hi GK'S Metals, I want a ${formData.requestType} for ${formData.product || 'your products'}.\n- Name: ${formData.name}\n- Phone: ${formData.phone}`;
         window.open(`https://wa.me/919000123813?text=${encodeURIComponent(txt)}`, '_blank');
       }, 1000);
       navigate('/thank-you');
@@ -161,6 +162,21 @@ export default function LeadForm({ heading, subtext, showProductField = true, de
               {errors.product && <p style={errorStyle}>{errors.product}</p>}
             </div>
           )}
+
+          {/* Request Type */}
+          <div>
+            <label style={labelStyle}>I am looking for *</label>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '0.25rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'Inter'", fontSize: '0.875rem', cursor: 'pointer', color: 'var(--c-text-primary)' }}>
+                <input type="radio" name="requestType" value="Bulk Quote" checked={formData.requestType === 'Bulk Quote'} onChange={handleChange} style={{ accentColor: 'var(--c-blue)' }} />
+                Bulk Quote
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'Inter'", fontSize: '0.875rem', cursor: 'pointer', color: 'var(--c-text-primary)' }}>
+                <input type="radio" name="requestType" value="Free Sample" checked={formData.requestType === 'Free Sample'} onChange={handleChange} style={{ accentColor: 'var(--c-blue)' }} />
+                Free Sample
+              </label>
+            </div>
+          </div>
 
           {/* Message */}
           <div>

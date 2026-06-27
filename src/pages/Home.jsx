@@ -176,10 +176,10 @@ export default function Home() {
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.4 }}
                 style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.75rem' }}>
                 <motion.button onClick={() => navigate('/contact')} className="btn-primary" whileHover={{ scale: 1.03, boxShadow: '0 8px 30px rgba(27,63,216,0.35)' }} whileTap={{ scale: 0.97 }}>
-                  Get a Free Quote
+                  Get Bulk Quote
                 </motion.button>
-                <motion.button onClick={() => navigate('/products')} className="btn-ghost" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                  View Products <FiArrowRight size={15} />
+                <motion.button onClick={() => navigate('/contact?type=sample')} className="btn-ghost" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ border: '2px solid #E91B8C', color: '#E91B8C' }}>
+                  Request Free Sample
                 </motion.button>
                 <motion.a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
@@ -192,9 +192,9 @@ export default function Home() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.52 }}
                 style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {[
+                  { text: 'ISO 9001:2015 Certified', color: '#F5C800' },
                   { text: 'PAN India Delivery', color: '#1B3FD8' },
                   { text: 'Verified Grades',    color: '#3BB54A' },
-                  { text: '5+ Years Trusted',   color: '#FF6320' },
                   { text: '24hr Response',      color: '#E91B8C' },
                 ].map((t, i) => (
                   <motion.span key={i} whileHover={{ y: -2, boxShadow: '0 4px 14px rgba(0,0,0,0.1)' }}
