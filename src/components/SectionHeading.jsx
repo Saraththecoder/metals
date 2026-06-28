@@ -33,12 +33,28 @@ export default function SectionHeading({ label, title, align = 'center', titleSt
         </motion.p>
       )}
       <motion.h2
-        initial={pref ? {} : { opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={pref ? {} : { 
+          opacity: 0, 
+          y: 16,
+          color: '#fff',
+          textShadow: '0 0 15px #FFD700, 0 0 30px #FF8C00, 0 0 50px #FF4500'
+        }}
+        whileInView={{ 
+          opacity: 1, 
+          y: 0,
+          color: titleStyle.color || '#0F1A3D',
+          textShadow: '0 0 0px rgba(255, 69, 0, 0)'
+        }}
         viewport={{ once: true, margin: '-40px' }}
-        transition={{ duration: 0.55, delay: 0.05 }}
+        transition={{ 
+          duration: 1.8, 
+          delay: 0.1, 
+          ease: "easeOut",
+          opacity: { duration: 0.5 },
+          y: { duration: 0.5 }
+        }}
         className="heading-lg"
-        style={titleStyle}
+        style={{ ...titleStyle, color: undefined }} // Let framer-motion handle color
       >
         {title}
       </motion.h2>

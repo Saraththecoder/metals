@@ -1,12 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { AnimatePresence } from 'framer-motion';
 
 // Global Layout Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CTAStrip from './components/CTAStrip';
 import ScrollToTop from './components/ScrollToTop';
+import SplashScreen from './components/SplashScreen';
 
 // Lazy Loaded Pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -30,10 +32,16 @@ const PageLoader = () => (
 );
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <HelmetProvider>
       <Router>
         <ScrollToTop />
+        <AnimatePresence>
+          {showSplash && <SplashScreen finishLoading={() => setShowSplash(false)} />}
+        </AnimatePresence>
+        
         <div className="flex flex-col min-h-screen bg-navy text-chrome-muted font-body">
           {/* Global Header Navigation */}
           <Navbar />

@@ -4,12 +4,15 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import {
   FiArrowRight, FiSend, FiCheckCircle, FiTruck, FiLayers,
-  FiDollarSign, FiAward, FiPhoneCall, FiChevronDown
+  FiDollarSign, FiAward, FiPhoneCall, FiChevronDown,
+  FiClock, FiBox, FiPackage, FiMapPin
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import products from '../data/products';
 import SectionHeading, { OreVein } from '../components/SectionHeading';
 import ProductCard from '../components/ProductCard';
+import TabbedProductCarousel from '../components/TabbedProductCarousel';
+import HeroShowcase from '../components/HeroShowcase';
 import logoImg from '../assets/logo.png';
 
 /* ── floating orb ── */
@@ -49,10 +52,10 @@ const features = [
 ];
 
 const stats = [
-  { val: '5',   suffix: '+', label: 'Years Active',      color: '#E91B8C' },
-  { val: '12',  suffix: '+', label: 'Products',          color: '#3BB54A' },
-  { val: '500', suffix: '+', label: 'Orders Fulfilled',  color: '#29B4F6' },
-  { val: 'PAN', suffix: '',  label: 'India Network',     color: '#F5C800' },
+  { val: '5',   suffix: '+', label: 'Years Active',      color: '#E91B8C', icon: FiClock },
+  { val: '12',  suffix: '+', label: 'Products',          color: '#3BB54A', icon: FiBox },
+  { val: '500', suffix: '+', label: 'Orders Fulfilled',  color: '#29B4F6', icon: FiPackage },
+  { val: 'PAN', suffix: '',  label: 'India Network',     color: '#F5C800', icon: FiMapPin },
 ];
 
 export default function Home() {
@@ -81,160 +84,28 @@ export default function Home() {
         <meta name="description" content="GK'S Metals & Minerals — trusted bulk supplier of graphite, iron ore, silica sand, manganese, and 12+ industrial minerals. Verified quality, PAN India delivery from Hyderabad." />
       </Helmet>
 
-      {/* ══ HERO ══ */}
-      <section style={{ position: 'relative', minHeight: 'calc(100vh - 71px)', display: 'flex', alignItems: 'center', overflow: 'hidden', background: 'linear-gradient(135deg, #EEF2FF 0%, #F5F8FF 45%, #F0FDF4 100%)' }}>
-        <Orb color="rgba(27,63,216,0.07)"  size="500px" x="50%"  y="-15%" dur={11} delay={0} />
-        <Orb color="rgba(59,181,74,0.06)"  size="350px" x="-8%"  y="40%"  dur={13} delay={2} />
-        <Orb color="rgba(233,27,140,0.05)" size="280px" x="80%"  y="60%"  dur={9}  delay={4} />
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(27,63,216,0.07) 1.5px, transparent 1.5px)', backgroundSize: '32px 32px', zIndex: 0 }} />
-
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '3rem 1.5rem', width: '100%', position: 'relative', zIndex: 2 }}>
-          {/* HERO GRID — LEFT: logo, RIGHT: text */}
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }}>
-
-            {/* ── LEFT: HERO IMAGE ── */}
-            <motion.div
-              className="hero-image-container"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}
-            >
-              <motion.img
-                src="https://res.cloudinary.com/doegh5lpl/image/upload/v1782589490/piles-of-raw-iron-ore-rocks-are-clustered-near-a-steel-manufacturing-plant-as-industrial-activity-continues-nearby-under-clear-skies-and-bright-lighting-conditions-photo_ycxere.webp"
-                alt="Industrial Raw Materials"
-                style={{
-                  width: '100%',
-                  maxWidth: '540px',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  borderRadius: '16px',
-                  filter: 'drop-shadow(0 20px 40px rgba(27,63,216,0.12))'
-                }}
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              />
-
-              {/* Floating info cards */}
-              <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-                style={{ position: 'absolute', bottom: '10%', right: '-5%', background: '#fff', borderRadius: '12px', padding: '0.75rem 1rem', boxShadow: '0 8px 28px rgba(27,63,216,0.14)', border: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.625rem', zIndex: 10 }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1B3FD8' }}><FiTruck size={16} /></div>
-                <div>
-                  <p style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.8rem', color: '#0F1A3D', lineHeight: 1 }}>PAN India</p>
-                  <p style={{ fontFamily: "'Inter'", fontSize: '0.64rem', color: 'var(--c-text-muted)', marginTop: '2px' }}>Delivery Network</p>
-                </div>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
-                style={{ position: 'absolute', top: '15%', left: '-5%', background: '#fff', borderRadius: '12px', padding: '0.75rem 1rem', boxShadow: '0 8px 28px rgba(59,181,74,0.18)', border: '1px solid var(--c-border-lt)', display: 'flex', alignItems: 'center', gap: '0.625rem', zIndex: 10 }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#EEF6EE', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3BB54A' }}><FiAward size={16} /></div>
-                <div>
-                  <p style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.8rem', color: '#0F1A3D', lineHeight: 1 }}>500+ Orders</p>
-                  <p style={{ fontFamily: "'Inter'", fontSize: '0.64rem', color: 'var(--c-text-muted)', marginTop: '2px' }}>Successfully Fulfilled</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* ── RIGHT: TEXT CONTENT ── */}
-            <div className="hero-text">
-              {/* Eyebrow */}
-              <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.625rem', background: '#fff', border: '1.5px solid rgba(27,63,216,0.2)', borderRadius: '30px', padding: '0.35rem 1rem 0.35rem 0.5rem', marginBottom: '1.5rem', boxShadow: '0 2px 12px rgba(27,63,216,0.08)' }}>
-                <motion.span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: '#3BB54A' }} animate={{ scale: [1, 1.4, 1] }} transition={{ duration: 2, repeat: Infinity }} />
-                <span className="label-tag">Trusted Industrial Raw Materials — Hyderabad, India</span>
-              </motion.div>
-
-              {/* H1 — staggered lines */}
-              {['Industrial-Grade', 'Metals & Minerals,', 'Delivered.'].map((line, i) => (
-                <div key={i} style={{ overflow: 'hidden' }}>
-                  <motion.h1
-                    initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 + i * 0.09 }}
-                    style={{
-                      fontFamily: "'Outfit', sans-serif", fontWeight: 800,
-                      fontSize: 'clamp(2rem, 5vw, 4rem)', lineHeight: 1.0,
-                      letterSpacing: '-0.025em', margin: 0,
-                      color: i === 1 ? '#1B3FD8' : '#0F1A3D',
-                    }}
-                  >
-                    {line}
-                  </motion.h1>
-                </div>
-              ))}
-
-              {/* Rainbow underline */}
-              <motion.div initial={{ scaleX: 0, originX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="lotus-gradient" style={{ height: '4px', width: '200px', borderRadius: '4px', margin: '1.25rem 0 1.5rem' }} />
-
-              {/* Subtext */}
-              <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.32 }}
-                style={{ fontFamily: "'Inter'", fontSize: '0.9875rem', color: 'var(--c-text-secondary)', lineHeight: 1.8, maxWidth: '490px', marginBottom: '2rem' }}>
-                GK'S Metals & Minerals supplies graphite, iron ore, silica, and 12+ verified industrial materials to manufacturers across India — 5 years of proven consistency, zero compromise on purity.
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.4 }}
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.75rem' }}>
-                <motion.button onClick={() => navigate('/contact')} className="btn-primary" whileHover={{ scale: 1.03, boxShadow: '0 8px 30px rgba(27,63,216,0.35)' }} whileTap={{ scale: 0.97 }}>
-                  Get Bulk Quote
-                </motion.button>
-                <motion.button onClick={() => navigate('/contact?type=sample')} className="btn-ghost" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ border: '2px solid #E91B8C', color: '#E91B8C' }}>
-                  Request Free Sample
-                </motion.button>
-                <motion.a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.75rem 1.125rem', borderRadius: '7px', background: '#1DA851', color: '#fff', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.82rem', textDecoration: 'none', boxShadow: '0 4px 14px rgba(29,168,81,0.3)' }}>
-                  <FaWhatsapp size={16} /> WhatsApp
-                </motion.a>
-              </motion.div>
-
-              {/* Trust badges */}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.52 }}
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {[
-                  { text: 'ISO 9001:2015 Certified', color: '#F5C800' },
-                  { text: 'PAN India Delivery', color: '#1B3FD8' },
-                  { text: 'Verified Grades',    color: '#3BB54A' },
-                  { text: '24hr Response',      color: '#E91B8C' },
-                ].map((t, i) => (
-                  <motion.span key={i} whileHover={{ y: -2, boxShadow: '0 4px 14px rgba(0,0,0,0.1)' }}
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.7rem', color: 'var(--c-text-secondary)', background: '#fff', border: '1px solid var(--c-border)', borderRadius: '20px', padding: '0.3rem 0.75rem', boxShadow: 'var(--shadow-sm)', cursor: 'default', transition: 'all 0.2s' }}>
-                    <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: t.color }} />
-                    {t.text}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.6 }}
-          style={{ position: 'absolute', bottom: '1.75rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', cursor: 'pointer', zIndex: 5 }}
-          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}>
-          <span style={{ fontFamily: "'Inter'", fontSize: '0.6rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--c-text-faint)' }}>Scroll</span>
-          <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}>
-            <FiChevronDown size={18} color="var(--c-text-faint)" />
-          </motion.div>
-        </motion.div>
-      </section>
+      {/* ══ DYNAMIC HERO SHOWCASE ══ */}
+      <HeroShowcase />
 
       {/* ══ STATS BAR ══ */}
       <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ background: '#0F1A3D', position: 'relative' }}>
         <div className="lotus-gradient" style={{ height: '3px', position: 'absolute', top: 0, left: 0, right: 0 }} />
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)' }}>
-            {stats.map((s, i) => (
+            {stats.map((s, i) => {
+              const Icon = s.icon;
+              return (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`stat-item stat-${i}`}
-                style={{ textAlign: 'center', padding: '2.25rem 1rem', borderRight: i % 2 === 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
-                <div style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3rem)', color: s.color, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '0.375rem' }}>
+                style={{ textAlign: 'center', padding: '2.25rem 1rem', borderRight: i % 2 === 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: 'clamp(2rem,5vw,3rem)', color: s.color, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '0.5rem' }}>
                   <CountUp to={s.val} suffix={s.suffix} />
                 </div>
-                <div style={{ fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)' }}>{s.label}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontFamily: "'Inter'", fontWeight: 600, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)' }}>
+                  <Icon size={14} color={s.color} style={{ opacity: 0.9 }} /> {s.label}
+                </div>
               </motion.div>
-            ))}
+            )})}
           </div>
         </div>
       </motion.section>
@@ -243,14 +114,12 @@ export default function Home() {
       <section style={{ padding: '6rem 1.5rem', background: 'var(--c-bg-subtle)' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <SectionHeading label="Product Catalogue" title="What We Supply" />
-          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
-            {products.slice(0, 6).map((p, i) => (
-              <motion.div key={p.slug} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.55, delay: i * 0.07 }} style={{ height: '100%' }}>
-                <ProductCard product={p} />
-              </motion.div>
-            ))}
+          
+          <div style={{ marginTop: '2rem' }}>
+            <TabbedProductCarousel products={products} />
           </div>
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} style={{ textAlign: 'center', marginTop: '3.5rem' }}>
             <Link to="/products" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
               View All {products.length} Products <FiArrowRight size={15} />
             </Link>
@@ -264,23 +133,83 @@ export default function Home() {
       <section style={{ padding: '6rem 1.5rem', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <SectionHeading label="Why Partner With Us" title="The GK'S Advantage" />
-          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: '1.25rem' }}>
+          <div className="bento-grid">
             {features.map((f, i) => {
               const Icon = f.icon;
+              const isWide = i === 0 || i === 4; // Making 0 and 4 wide
+              const isTall = i === 1; // Making 1 tall
+              // The others (2, 3, 5) are square.
+              
               return (
                 <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-30px' }} transition={{ duration: 0.5, delay: i * 0.07 }}
                   whileHover={{ y: -6, boxShadow: '0 14px 40px rgba(27,63,216,0.1)' }}
-                  style={{ background: '#fff', border: '1px solid var(--c-border-lt)', borderRadius: '12px', padding: '1.75rem', borderTop: `3px solid ${f.color}`, boxShadow: 'var(--shadow-card)', transition: 'box-shadow 0.25s', cursor: 'default' }}>
+                  className={`bento-item-${i}`}
+                  style={{ 
+                    background: '#fff', border: '1px solid var(--c-border-lt)', borderRadius: '16px', padding: '2rem', borderTop: `4px solid ${f.color}`, boxShadow: 'var(--shadow-card)', transition: 'box-shadow 0.25s, transform 0.25s', cursor: 'default',
+                    display: 'flex', 
+                    flexDirection: isWide ? 'row' : 'column',
+                    alignItems: isWide ? 'center' : 'flex-start',
+                    justifyContent: isTall ? 'center' : 'flex-start',
+                    gap: isWide ? '2rem' : '0',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}>
+                  {/* Subtle background graphic for the tall/wide cards to make them feel premium */}
+                  {(isWide || isTall) && (
+                    <div style={{ position: 'absolute', right: '-10%', bottom: '-10%', opacity: 0.03, pointerEvents: 'none' }}>
+                      <Icon size={180} />
+                    </div>
+                  )}
                   <motion.div whileHover={{ rotate: [0, -8, 8, 0], scale: 1.1 }} transition={{ duration: 0.5 }}
-                    style={{ width: '46px', height: '46px', background: f.bg, borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: f.color, marginBottom: '1.125rem' }}>
-                    <Icon size={22} />
+                    style={{ width: isWide ? '64px' : '48px', height: isWide ? '64px' : '48px', flexShrink: 0, background: f.bg, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: f.color, marginBottom: isWide ? '0' : '1.25rem', zIndex: 1 }}>
+                    <Icon size={isWide ? 28 : 24} />
                   </motion.div>
-                  <h3 style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.97rem', color: '#0F1A3D', marginBottom: '0.6rem' }}>{f.title}</h3>
-                  <p style={{ fontFamily: "'Inter'", fontSize: '0.84rem', color: 'var(--c-text-muted)', lineHeight: 1.72 }}>{f.text}</p>
+                  <div style={{ zIndex: 1 }}>
+                    <h3 style={{ fontFamily: "'Outfit'", fontWeight: 800, fontSize: isWide ? '1.2rem' : '1.05rem', color: '#0F1A3D', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>{f.title}</h3>
+                    <p style={{ fontFamily: "'Inter'", fontSize: '0.85rem', color: 'var(--c-text-muted)', lineHeight: 1.6 }}>{f.text}</p>
+                  </div>
                 </motion.div>
               );
             })}
           </div>
+          <style>{`
+            .bento-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-auto-rows: minmax(180px, auto);
+              gap: 1.25rem;
+            }
+            .bento-item-0 { grid-column: 1 / 3; grid-row: 1 / 2; }
+            .bento-item-1 { grid-column: 3 / 4; grid-row: 1 / 3; }
+            .bento-item-2 { grid-column: 1 / 2; grid-row: 2 / 3; }
+            .bento-item-3 { grid-column: 2 / 3; grid-row: 2 / 3; }
+            .bento-item-4 { grid-column: 1 / 3; grid-row: 3 / 4; }
+            .bento-item-5 { grid-column: 3 / 4; grid-row: 3 / 4; }
+
+            @media (max-width: 900px) {
+              .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; }
+              .bento-item-0, .bento-item-1, .bento-item-2, .bento-item-3, .bento-item-4, .bento-item-5 {
+                grid-column: span 1;
+                grid-row: auto;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                gap: 0 !important;
+              }
+              .bento-item-0, .bento-item-4 { grid-column: 1 / 3; }
+              .bento-item-0 > div:nth-child(2), .bento-item-4 > div:nth-child(2) {
+                margin-bottom: 1.25rem !important;
+                width: 48px !important; height: 48px !important;
+              }
+            }
+
+            @media (max-width: 600px) {
+              .bento-grid { grid-template-columns: 1fr; }
+              .bento-item-0, .bento-item-1, .bento-item-2, .bento-item-3, .bento-item-4, .bento-item-5 {
+                grid-column: 1 / -1;
+              }
+            }
+          `}</style>
         </div>
       </section>
 
@@ -341,20 +270,38 @@ export default function Home() {
       </section>
 
       {/* ══ TESTIMONIALS ══ */}
-      <section style={{ padding: '6rem 1.5rem', background: '#fff' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+      <section style={{ padding: '6rem 0', background: '#fff', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem', marginBottom: '3rem' }}>
           <SectionHeading label="Client Feedback" title="Trusted by Manufacturers" />
-          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
+        </div>
+        
+        <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
+          {/* Fading edges for smooth entry/exit */}
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '100px', background: 'linear-gradient(to right, #fff, transparent)', zIndex: 10, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '100px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 10, pointerEvents: 'none' }} />
+          
+          <div className="marquee-container">
             {[
               { quote: "Sourcing graphite powder with consistent mesh size is always challenging. GK'S Metals solved this completely — their batch-to-batch consistency is impeccable.", author: 'V.K. Murthy',  role: 'Head of Procurement', company: 'Southern Foundry Linings', color: '#3BB54A' },
               { quote: "We needed 500 MT of high-purity Silica Sand delivered to Gujarat on a tight timeline. GK'S Metals coordinated everything flawlessly — on spec, on time.",   author: 'Ananya Sen',   role: 'Operations Director',  company: 'Gujarat Glass Industries',   color: '#1B3FD8' },
               { quote: "Their ADC-12 Aluminium Ingots matched our die-casting specs exactly. Best landed cost we've achieved. Highly recommended for industrial buyers.",            author: 'Satish Reddy', role: 'Technical Lead',        company: 'Deccan Auto Components',     color: '#E91B8C' },
-            ].map((t, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-30px' }} transition={{ duration: 0.55, delay: i * 0.1 }}
-                whileHover={{ y: -5, boxShadow: '0 14px 40px rgba(0,0,0,0.1)' }}
-                style={{ background: '#fff', borderRadius: '14px', border: '1px solid var(--c-border-lt)', borderTop: `3px solid ${t.color}`, padding: '2rem', boxShadow: 'var(--shadow-card)', position: 'relative', overflow: 'hidden', cursor: 'default' }}>
+            ].concat([
+              { quote: "Sourcing graphite powder with consistent mesh size is always challenging. GK'S Metals solved this completely — their batch-to-batch consistency is impeccable.", author: 'V.K. Murthy',  role: 'Head of Procurement', company: 'Southern Foundry Linings', color: '#3BB54A' },
+              { quote: "We needed 500 MT of high-purity Silica Sand delivered to Gujarat on a tight timeline. GK'S Metals coordinated everything flawlessly — on spec, on time.",   author: 'Ananya Sen',   role: 'Operations Director',  company: 'Gujarat Glass Industries',   color: '#1B3FD8' },
+              { quote: "Their ADC-12 Aluminium Ingots matched our die-casting specs exactly. Best landed cost we've achieved. Highly recommended for industrial buyers.",            author: 'Satish Reddy', role: 'Technical Lead',        company: 'Deccan Auto Components',     color: '#E91B8C' },
+            ]).concat([
+              { quote: "Sourcing graphite powder with consistent mesh size is always challenging. GK'S Metals solved this completely — their batch-to-batch consistency is impeccable.", author: 'V.K. Murthy',  role: 'Head of Procurement', company: 'Southern Foundry Linings', color: '#3BB54A' },
+              { quote: "We needed 500 MT of high-purity Silica Sand delivered to Gujarat on a tight timeline. GK'S Metals coordinated everything flawlessly — on spec, on time.",   author: 'Ananya Sen',   role: 'Operations Director',  company: 'Gujarat Glass Industries',   color: '#1B3FD8' },
+              { quote: "Their ADC-12 Aluminium Ingots matched our die-casting specs exactly. Best landed cost we've achieved. Highly recommended for industrial buyers.",            author: 'Satish Reddy', role: 'Technical Lead',        company: 'Deccan Auto Components',     color: '#E91B8C' },
+            ]).concat([
+              { quote: "Sourcing graphite powder with consistent mesh size is always challenging. GK'S Metals solved this completely — their batch-to-batch consistency is impeccable.", author: 'V.K. Murthy',  role: 'Head of Procurement', company: 'Southern Foundry Linings', color: '#3BB54A' },
+              { quote: "We needed 500 MT of high-purity Silica Sand delivered to Gujarat on a tight timeline. GK'S Metals coordinated everything flawlessly — on spec, on time.",   author: 'Ananya Sen',   role: 'Operations Director',  company: 'Gujarat Glass Industries',   color: '#1B3FD8' },
+              { quote: "Their ADC-12 Aluminium Ingots matched our die-casting specs exactly. Best landed cost we've achieved. Highly recommended for industrial buyers.",            author: 'Satish Reddy', role: 'Technical Lead',        company: 'Deccan Auto Components',     color: '#E91B8C' },
+            ]).map((t, i) => (
+              <div key={i} className="marquee-item"
+                style={{ flexShrink: 0, width: '380px', background: '#fff', borderRadius: '14px', border: '1px solid var(--c-border-lt)', borderTop: `3px solid ${t.color}`, padding: '2rem', boxShadow: 'var(--shadow-card)', position: 'relative', overflow: 'hidden', cursor: 'default', margin: '1rem 0.625rem', transition: 'transform 0.2s, box-shadow 0.2s' }}>
                 <div style={{ position: 'absolute', top: '1rem', right: '1.5rem', fontFamily: 'Georgia,serif', fontSize: '4.5rem', color: `${t.color}15`, lineHeight: 1, userSelect: 'none' }}>"</div>
-                <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.78, fontStyle: 'italic', marginBottom: '1.5rem' }}>"{t.quote}"</p>
+                <p style={{ fontFamily: "'Inter'", fontSize: '0.875rem', color: 'var(--c-text-secondary)', lineHeight: 1.78, fontStyle: 'italic', marginBottom: '1.5rem', whiteSpace: 'normal' }}>"{t.quote}"</p>
                 <div style={{ borderTop: '1px solid var(--c-border-lt)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                   <div>
                     <p style={{ fontFamily: "'Outfit'", fontWeight: 700, fontSize: '0.87rem', color: '#0F1A3D', marginBottom: '2px' }}>{t.author}</p>
@@ -362,13 +309,31 @@ export default function Home() {
                   </div>
                   <span style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: t.color }}>{t.company}</span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <style>{`
+        /* ─── MARQUEE ANIMATION ─── */
+        @keyframes marqueeScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+          display: flex;
+          width: max-content;
+          animation: marqueeScroll 35s linear infinite;
+        }
+        .marquee-container:hover {
+          animation-play-state: paused;
+        }
+        .marquee-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 14px 40px rgba(0,0,0,0.1) !important;
+        }
+
         /* ─── RESPONSIVE HERO ─── */
         @media (min-width: 900px) {
           .hero-grid {

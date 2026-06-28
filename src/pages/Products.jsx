@@ -7,7 +7,7 @@ import SectionHeading from '../components/SectionHeading';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiPhoneCall } from 'react-icons/fi';
 
-const CATEGORIES = ['All', 'Graphite', 'Metals & Ores', 'Minerals', 'Metal Scrap & Alloys'];
+const CATEGORIES = ['All', ...new Set(products.map(p => p.category).filter(c => c && c.trim() !== ''))];
 
 const pref = typeof window !== 'undefined' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
