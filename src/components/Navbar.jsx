@@ -40,37 +40,34 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Rainbow top stripe */}
-      <div className="lotus-gradient lotus-divider" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 102 }} />
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 102, display: 'flex', flexDirection: 'column' }}>
+        {/* Rainbow top stripe */}
+        <div className="lotus-gradient lotus-divider" style={{ flexShrink: 0 }} />
 
-      {/* Announcement Banner */}
-      <div style={{
-        position: 'fixed', top: '3px', left: 0, right: 0, zIndex: 101,
-        background: '#0F1A3D', color: '#fff', textAlign: 'center', padding: '0.4rem 1rem',
-        fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600,
-        display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}>
-        <span style={{ color: '#F5C800' }}>⚡ Need bulk materials?</span> 
-        <span>Get an instant custom quote on WhatsApp:</span>
-        <a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer" style={{ color: '#4ADE80', display: 'inline-flex', alignItems: 'center', gap: '0.25rem', textDecoration: 'none' }} onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'} onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}>
-          <FaWhatsapp size={14} /> +91 90001 23813
-        </a>
-      </div>
+        {/* Announcement Banner */}
+        <div style={{
+          background: '#0F1A3D', color: '#fff', textAlign: 'center', padding: '0.4rem 1rem',
+          fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600,
+          display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem',
+          flexWrap: 'wrap', flexShrink: 0
+        }}>
+          <span style={{ color: '#F5C800' }}>⚡ Need bulk materials?</span> 
+          <span>Get an instant custom quote on WhatsApp:</span>
+          <a href="https://wa.me/919000123813" target="_blank" rel="noopener noreferrer" style={{ color: '#4ADE80', display: 'inline-flex', alignItems: 'center', gap: '0.25rem', textDecoration: 'none' }} onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'} onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}>
+            <FaWhatsapp size={14} /> +91 90001 23813
+          </a>
+        </div>
 
-      <header
-        style={{
-          position: 'fixed',
-          top: '35px',
-          left: 0, right: 0,
-          zIndex: 100,
-          transition: 'background 0.3s, box-shadow 0.3s',
-          background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.98)',
-          boxShadow: scrolled ? '0 2px 20px rgba(27,63,216,0.1)' : 'none',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          borderBottom: scrolled ? '1px solid var(--c-border-lt)' : '1px solid transparent',
-        }}
-      >
+        <header
+          style={{
+            transition: 'background 0.3s, box-shadow 0.3s',
+            background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.98)',
+            boxShadow: scrolled ? '0 2px 20px rgba(27,63,216,0.1)' : 'none',
+            backdropFilter: scrolled ? 'blur(12px)' : 'none',
+            borderBottom: scrolled ? '1px solid var(--c-border-lt)' : '1px solid transparent',
+            width: '100%',
+          }}
+        >
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem', height: '68px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
           {/* LOGO */}
@@ -195,10 +192,11 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </header>
+        </header>
+      </div>
 
       {/* Spacer for fixed header + banner + rainbow stripe */}
-      <div style={{ height: '103px' }} />
+      <div style={{ height: '120px' }} />
 
       <style>{`
         @media (min-width: 768px) {
