@@ -19,8 +19,8 @@ export default function Products() {
   return (
     <div style={{ background: 'var(--c-base)', padding: '4rem 1.5rem 6rem' }}>
       <Helmet>
-        <title>Industrial Metals & Minerals Products | GK Metals & Minerals</title>
-        <meta name="description" content="Browse 12+ industrial materials: graphite powder, iron ore, silica sand, feldspar, bauxite, manganese ore, aluminium ingots, and more. Bulk supply across India." />
+        <title>Buy Graphite, Iron Ore, Silica Sand in Bulk | GK Metals & Minerals India</title>
+        <meta name="description" content="Browse our catalogue of 12+ verified industrial minerals including graphite powder, silica sand, and manganese. Wholesale suppliers in Hyderabad with PAN India delivery." />
       </Helmet>
 
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>

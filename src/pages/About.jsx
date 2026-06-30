@@ -33,8 +33,8 @@ export default function About() {
   return (
     <div style={{ background: '#fff' }}>
       <Helmet>
-        <title>About GK'S Metals & Minerals | Industrial Supply Company</title>
-        <meta name="description" content="GK'S Metals & Minerals is a Hyderabad-based trading company specialising in bulk supply of graphite, metals and minerals to Indian manufacturers for 5+ years." />
+        <title>About GK'S Metals & Minerals | Top Minerals Company in Hyderabad</title>
+        <meta name="description" content="GK'S Metals & Minerals is a trusted metals distributor in India, supplying graphite, iron ore, and industrial minerals to manufacturers across Hyderabad and PAN India." />
       </Helmet>
 
       {/* HERO */}

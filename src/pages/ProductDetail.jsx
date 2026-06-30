@@ -39,8 +39,32 @@ export default function ProductDetail() {
   return (
     <div style={{ background: 'var(--c-base)', padding: '2rem 1.5rem 6rem' }}>
       <Helmet>
-        <title>{`${product.name} — Specs & Bulk Supply | GK Metals & Minerals`}</title>
-        <meta name="description" content={`Get ${product.name} specifications, chemical parameters, and bulk pricing. ${product.tagline}`} />
+        <title>{`${product.name} — Specs & Bulk Supply in India | GK Metals & Minerals`}</title>
+        <meta name="description" content={`Get high-grade ${product.name} specifications, chemical parameters, and wholesale pricing in Hyderabad & India. ${product.tagline}`} />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              "name": "${product.name}",
+              "image": "https://gkmetalsandminerals.com/logo.png",
+              "description": "${product.description}",
+              "brand": {
+                "@type": "Brand",
+                "name": "GK'S Metals & Minerals"
+              },
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "GK'S Metals & Minerals"
+                }
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>

@@ -80,8 +80,36 @@ export default function Home() {
   return (
     <div style={{ background: '#fff', overflowX: 'hidden' }}>
       <Helmet>
-        <title>GK'S Metals & Minerals | Industrial Raw Materials Supplier India</title>
-        <meta name="description" content="GK'S Metals & Minerals — trusted bulk supplier of graphite, iron ore, silica sand, manganese, and 12+ industrial minerals. Verified quality, PAN India delivery from Hyderabad." />
+        <title>GK'S Metals & Minerals | Top Industrial Minerals Supplier India</title>
+        <meta name="description" content="GK'S Metals & Minerals — trusted bulk supplier of graphite powder, iron ore, silica sand, and manganese in Hyderabad and PAN India." />
+        <meta name="keywords" content="Industrial minerals supplier in India, Graphite powder manufacturer Hyderabad, Iron ore wholesale distributor Telangana, Silica sand suppliers in India, Manganese ore exporters India" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "GK'S Metals & Minerals",
+              "image": "https://gkmetalsandminerals.com/logo.png",
+              "@id": "https://gkmetalsandminerals.com/",
+              "url": "https://gkmetalsandminerals.com/",
+              "telephone": "+91 90001 23813",
+              "email": "gkmetalsandminerals@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Road No.7, Anjaneya Nagar, Moosapet",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500018",
+                "addressCountry": "IN"
+              },
+              "founder": {
+                "@type": "Person",
+                "name": "Krishna Chaithanya"
+              },
+              "taxID": "36AZRPM6557G1ZQ"
+            }
+          `}
+        </script>
       </Helmet>
 
       {/* ══ DYNAMIC HERO SHOWCASE ══ */}

@@ -20,8 +20,8 @@ export default function Contact() {
   return (
     <div style={{ background: 'var(--c-bg-subtle)', padding: '4rem 1.5rem 6rem' }}>
       <Helmet>
-        <title>Contact GK'S Metals & Minerals | Get a Quote</title>
-        <meta name="description" content="Contact GK'S Metals & Minerals Hyderabad. Send your material requirements and volume specs — we respond within 24 hours." />
+        <title>Contact GK Metals Hyderabad | Order Industrial Minerals in India</title>
+        <meta name="description" content="Contact GK'S Metals & Minerals in Hyderabad. Send your material requirements and volume specs for graphite, iron ore, and minerals — we respond within 24 hours." />
       </Helmet>
 
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
