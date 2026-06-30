@@ -42,7 +42,7 @@ const slides = [
     title3: "Perfected.",
     titleColor: "#059669",
     subtitle: "From Aluminium to Nickel-based alloys, we supply exact compositions for foundries, forging, and die-casting operations.",
-    image: "https://res.cloudinary.com/doegh5lpl/image/upload/v1782589490/piles-of-raw-iron-ore-rocks-are-clustered-near-a-steel-manufacturing-plant-as-industrial-activity-continues-nearby-under-clear-skies-and-bright-lighting-conditions-photo_ycxere.webp",
+    image: "/image copy.png",
     bgGradient: "linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 45%, #EEF2FF 100%)",
     tagline: "Custom Grade Matching Available",
     tagColor: "#059669",

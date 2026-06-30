@@ -106,7 +106,7 @@ export default function Footer() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.75rem', flexWrap: 'wrap', gap: '0.75rem' }}>
           <p style={{ fontFamily: "'Inter'", fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
-            © {year} GK'S Metals & Minerals. All rights reserved. Hyderabad, India.
+            © {year} GK'S Metals & Minerals. All rights reserved. Hyderabad, India. | GSTIN: 36AZRPM6557G1ZQ
           </p>
           <p style={{ fontFamily: "'Inter'", fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
             Verified Grades · PAN India Supply · ISO Quality Standards
