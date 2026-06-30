@@ -12,7 +12,7 @@ const slides = [
     title3: "Delivered.",
     titleColor: "#1B3FD8",
     subtitle: "GK'S Metals & Minerals supplies graphite, iron ore, silica, and 12+ verified industrial materials to manufacturers across India.",
-    image: "https://res.cloudinary.com/doegh5lpl/image/upload/v1782589490/piles-of-raw-iron-ore-rocks-are-clustered-near-a-steel-manufacturing-plant-as-industrial-activity-continues-nearby-under-clear-skies-and-bright-lighting-conditions-photo_ycxere.webp",
+    image: "/image copy.png",
     bgGradient: "linear-gradient(135deg, #EEF2FF 0%, #F5F8FF 45%, #F0FDF4 100%)",
     tagline: "Trusted Industrial Raw Materials — Hyderabad, India",
     tagColor: "#3BB54A",
